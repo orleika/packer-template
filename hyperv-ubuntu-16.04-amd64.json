@@ -55,11 +55,6 @@
   ],
   "provisioners": [
     {
-      "destination": "/tmp/metadata.json",
-      "source": "{{user `metadata`}}",
-      "type": "file"
-    },
-    {
       "environment_vars": [
         "HOME_DIR=/home/vagrant",
         "http_proxy={{user `http_proxy`}}",
@@ -93,7 +88,6 @@
     "iso_name": "ubuntu-16.04.3-server-amd64.iso",
     "iso_path": "{{env `iso_path`}}",
     "memory": "512",
-    "metadata": "floppy/dummy_metadata.json",
     "mirror": "http://releases.ubuntu.com",
     "mirror_directory": "16.04",
     "no_proxy": "{{env `no_proxy`}}",
