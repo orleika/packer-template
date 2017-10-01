@@ -1,7 +1,7 @@
 # packer-templates
 
-[![Packer](http://img.shields.io/badge/Packer-v1.0.3-blue.svg?style=flat-square)](https://www.packer.io/)
-[![Vagrant](http://img.shields.io/badge/Packer-v1.9.7-blue.svg?style=flat-square)](https://www.vagrantup.com/)
+[![Packer](http://img.shields.io/badge/Packer-v1.1.0-blue.svg?style=flat-square)](https://www.packer.io/)
+[![Vagrant](http://img.shields.io/badge/Vagrant-v2.0.0-blue.svg?style=flat-square)](https://www.vagrantup.com/)
 [![MIT License](http://img.shields.io/badge/license-MIT-blue.svg?style=flat-square)](LICENSE)
 
 > Building virtualization image with packer
@@ -10,13 +10,16 @@ This project release the Vagrant Box with Packer, which templates optimized for 
 
 ## Templates
 
+See also [latest release note](https://github.com/orleika/packer-templates/releases
+).
+
 ### Ubuntu
-- ~~Ubuntu 16.04, Virtual Box ([box]() | [template](virtualbox-ubuntu-16.04-amd64.json))~~
-- Ubuntu 16.04, Hyper-v ([box]() | [template](hyperv-ubuntu-16.04-amd64.json))
+- ~~Ubuntu 16.04, Virtual Box ([template](virtualbox-ubuntu-16.04-amd64.json))~~
+- Ubuntu 16.04, Hyper-v ([template](hyperv-ubuntu-16.04-amd64.json))
 
 ### Fedora
-- ~~Fedora 26, Virtual Box ([box]() | [template](virtualbox-fedora-26-x86_64.json))~~
-- ~~Fedora 26, Hyper-v ([box]() | [template](hyperv-fedora-26-x86_64.json))~~
+- ~~Fedora 26, Virtual Box ([template](virtualbox-fedora-26-x86_64.json))~~
+- ~~Fedora 26, Hyper-v ([template](hyperv-fedora-26-x86_64.json))~~
 
 ## Usage
 
@@ -24,15 +27,20 @@ This project release the Vagrant Box with Packer, which templates optimized for 
 2. Download a box in the templates list.
 3. Type this command.  
 ```
-$ vagrant box add <box_path>
+$ vagrant box add <metadata_url>
 ```
+e.g. Ubuntu 16.04, Hyper-v
+```
+$ vagrant box add https://github.com/orleika/packer-templates/releases/download/v0.0.1/ubuntu-16.04.hyperv.json
+```
+
 4. Now, the box is available. It's helpful to arrange a Vagrantfile referring to [this site](https://www.vagrantup.com/intro/getting-started/index.html).
 
 ## Build
 
-e.g. Ubuntu 16.04, Virtual Box
+e.g. Ubuntu 16.04, Hyper-v
 ```
-$ packer build virtualbox-ubuntu16.04.amd64.json
+$ packer build hyperv-ubuntu16.04.amd64.json
 ```
 The box is created in the builds directory.  
 If you have the iso file, you can use one.
