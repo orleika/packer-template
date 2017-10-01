@@ -33,7 +33,6 @@ e.g. Ubuntu 16.04, Hyper-v
 ```
 $ vagrant box add https://github.com/orleika/packer-templates/releases/download/v0.0.1/ubuntu-16.04.hyperv.json
 ```
-
 4. Now, the box is available. It's helpful to arrange a Vagrantfile referring to [this site](https://www.vagrantup.com/intro/getting-started/index.html).
 
 ## Build
